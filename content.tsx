@@ -6,13 +6,16 @@ import { useStorage } from "@plasmohq/storage/hook"
 import {
   buildDailyTotalKey,
   DEFAULT_SETTINGS,
+  DEFAULT_UI_STATE,
   DOMAIN_LABEL,
   formatDuration,
   getDateKey,
   localAreaStorage,
   normalizeSettings,
+  normalizeUiState,
   resolveDomainFromHostname,
   SETTINGS_STORAGE_KEY,
+  UI_STATE_STORAGE_KEY,
   type DomainKey
 } from "~lib/numa-timer"
 
@@ -79,7 +82,32 @@ const NumaTimer = () => {
   const flushInProgressRef = useRef(false)
   const storedDailySecondsRef = useRef(0)
   const [displaySeconds, setDisplaySeconds] = useState(0)
-  const [isCollapsed, setIsCollapsed] = useState(false)
+
+  const [rawUiState, setUiState, { isLoading: isUiStateLoading }] = useStorage(
+    { key: UI_STATE_STORAGE_KEY, instance: localAreaStorage },
+    DEFAULT_UI_STATE
+  )
+  const uiState = normalizeUiState(rawUiState)
+  const isCollapsed =
+    domain === undefined
+      ? false
+      : isUiStateLoading
+        ? true
+        : uiState.collapsed[domain]
+
+  const toggleCollapsed = useCallback(() => {
+    if (domain === undefined) return
+    setUiState((prev) => {
+      const normalized = normalizeUiState(prev)
+      return {
+        ...normalized,
+        collapsed: {
+          ...normalized.collapsed,
+          [domain]: !normalized.collapsed[domain]
+        }
+      }
+    })
+  }, [domain, setUiState])
 
   const dailyTotalStorageKey = domain
     ? buildDailyTotalKey(dateKey, domain)
@@ -232,7 +260,7 @@ const NumaTimer = () => {
           Numa Timer · {DOMAIN_LABEL[domain]}
         </div>
         <button
-          onClick={() => setIsCollapsed((prev) => !prev)}
+          onClick={toggleCollapsed}
           aria-label={
             isCollapsed ? "Expand timer panel" : "Collapse timer panel"
           }

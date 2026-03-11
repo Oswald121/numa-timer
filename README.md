@@ -87,6 +87,7 @@ pnpm build
 ## データ保存
 
 - 設定キー: `numa-timer:settings:v1`
+- UI 状態キー: `numa-timer:ui-state:v1`（折りたたみ状態・位置・サイズ・テーマなど見た目関連）
 - 日次合計キー: `numa-timer:daily-total:v1:<YYYY-MM-DD>:<domain>`
 - 保存先: `chrome.storage.local`（`@plasmohq/storage`）
 

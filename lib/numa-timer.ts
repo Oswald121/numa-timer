@@ -23,6 +23,29 @@ export const DEFAULT_SETTINGS: NumaTimerSettings = {
 export const SETTINGS_STORAGE_KEY = "numa-timer:settings:v1"
 export const DAILY_TOTAL_STORAGE_PREFIX = "numa-timer:daily-total:v1"
 
+export type NumaTimerUiState = {
+  collapsed: Record<DomainKey, boolean>
+  // 将来的に size: 'S' | 'M' | 'L' などを追加予定
+}
+
+export const UI_STATE_STORAGE_KEY = "numa-timer:ui-state:v1"
+
+export const DEFAULT_UI_STATE: NumaTimerUiState = {
+  collapsed: {
+    youtube: false,
+    x: false
+  }
+}
+
+export const normalizeUiState = (
+  uiState?: Partial<NumaTimerUiState>
+): NumaTimerUiState => ({
+  collapsed: {
+    youtube: uiState?.collapsed?.youtube ?? DEFAULT_UI_STATE.collapsed.youtube,
+    x: uiState?.collapsed?.x ?? DEFAULT_UI_STATE.collapsed.x
+  }
+})
+
 export const localAreaStorage = new Storage({ area: "local" })
 
 const pad2 = (value: number) => value.toString().padStart(2, "0")

